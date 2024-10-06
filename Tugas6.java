@@ -36,7 +36,7 @@ public class Tugas6 extends JFrame {
 
     public Tugas6() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400, 800);
+        this.setSize(900, 800);
         this.setLayout(null);
 
         JMenuBar menuBar = new JMenuBar();
@@ -64,19 +64,19 @@ public class Tugas6 extends JFrame {
         this.setJMenuBar(menuBar);
 
         JLabel nameLabel = new JLabel("Nama:");
-        nameLabel.setBounds(15, 40, 80, 10);
+        nameLabel.setBounds(15, 40, 100, 25);
 
         nameField = new JTextField();
         nameField.setBounds(15, 60, 350, 30);
 
         JLabel phoneLabel = new JLabel("Nomor HP:");
-        phoneLabel.setBounds(15, 100, 80, 10);
+        phoneLabel.setBounds(15, 100, 100, 25);
 
         phoneField = new JTextField();
         phoneField.setBounds(15, 120, 350, 30);
 
         JLabel genderLabel = new JLabel("Jenis Kelamin:");
-        genderLabel.setBounds(15, 160, 100, 10);
+        genderLabel.setBounds(15, 160, 150, 25);
 
         JRadioButton maleRadio = new JRadioButton("Laki-Laki");
         maleRadio.setBounds(15, 180, 150, 30);
@@ -92,41 +92,41 @@ public class Tugas6 extends JFrame {
         genderGroup.add(femaleRadio);
 
         JLabel savingsLabel = new JLabel("Jenis Tabungan:");
-        savingsLabel.setBounds(15, 270, 100, 10);
+        savingsLabel.setBounds(15, 270, 150, 25);
 
-        String[] savingsOptions = {"Tabungan Reguler", "Tabungan Pendidikan", "Tabungan Haji", "Deposito"};
+        String[] savingsOptions = {"Silver", "Gold", "Platinum", "Deposito"};
         savingsList = new JList<>(savingsOptions);
         savingsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane savingsScrollPane = new JScrollPane(savingsList);
-        savingsScrollPane.setBounds(150, 290, 200, 80);
+        savingsScrollPane.setBounds(15, 290, 350, 80);
 
         JLabel transactionLabel = new JLabel("Frekuensi Transaksi/Bulan:");
-        transactionLabel.setBounds(15, 380, 200, 10);
+        transactionLabel.setBounds(15, 380, 200, 25);
 
         SpinnerModel transactionModel = new SpinnerNumberModel(1, 1, 100, 1);
         transactionSpinner = new JSpinner(transactionModel);
-        transactionSpinner.setBounds(220, 400, 50, 30);
+        transactionSpinner.setBounds(220, 400, 100, 30);
 
         JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(15, 440, 100, 10);
+        passwordLabel.setBounds(15, 440, 100, 25);
 
         passwordField = new JPasswordField();
-        passwordField.setBounds(15, 460, 200, 30);
+        passwordField.setBounds(15, 460, 350, 30);
 
         JLabel confirmPasswordLabel = new JLabel("Konfirmasi Password:");
-        confirmPasswordLabel.setBounds(15, 500, 150, 10);
+        confirmPasswordLabel.setBounds(15, 500, 200, 25);
 
         confirmPasswordField = new JPasswordField();
-        confirmPasswordField.setBounds(15, 520, 200, 30);
+        confirmPasswordField.setBounds(15, 520, 350, 30);
 
         JLabel dobLabel = new JLabel("Tanggal Lahir:");
-        dobLabel.setBounds(15, 560, 100, 10);
+        dobLabel.setBounds(15, 560, 100, 25);
 
         SpinnerModel dateModel = new SpinnerDateModel();
         dateSpinner = new JSpinner(dateModel);
         JSpinner.DateEditor dateEditor = new JSpinner.DateEditor(dateSpinner, "dd/MM/yyyy");
         dateSpinner.setEditor(dateEditor);
-        dateSpinner.setBounds(150, 580, 150, 30);
+        dateSpinner.setBounds(15, 580, 350, 30);
 
         JButton saveButton = new JButton("Simpan");
         saveButton.setBounds(15, 620, 100, 40);
@@ -170,6 +170,7 @@ public class Tugas6 extends JFrame {
                 transactionSpinner.setValue(1);
                 passwordField.setText("");
                 confirmPasswordField.setText("");
+                dateSpinner.setValue(new java.util.Date());
             }
         });
 
@@ -204,3 +205,4 @@ public class Tugas6 extends JFrame {
         });
     }
 }
+
